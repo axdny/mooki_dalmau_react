@@ -1,15 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Main/>
-      <Footer/>
+      <ItemListContainer greeting='Mooki Vegan'/>
     </div>
   );
 }

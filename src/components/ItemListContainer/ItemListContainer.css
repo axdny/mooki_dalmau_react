@@ -6,16 +6,10 @@
 }
 
 .hero-image--opacity {
-  min-height: 88vh;
+  min-height: 100vh;
   background-color: #00000080;
 }
 
 .hero-image--title {
   font-size: 7.5vw;
-}
-
-@media all and (min-width: 972px) {
-  .hero-image--opacity {
-    min-height: 87vh;
-  }
 }

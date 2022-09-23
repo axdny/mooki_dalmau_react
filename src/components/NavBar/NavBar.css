@@ -5,3 +5,8 @@
 .nav-item:hover {
   opacity: 0.5;
 }
+
+button {
+  background: none;
+  border: none;
+}

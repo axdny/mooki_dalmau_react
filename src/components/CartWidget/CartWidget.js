@@ -1,7 +1,7 @@
 import cart from '../Assets/cart.svg';
 import './CartWidget.css'
 
-export default function CartWidget() {
+const CartWidget = () => {
   return (
     <div className="d-flex cart fw-bold text-white fs-2">
       <div>-</div>
@@ -11,3 +11,5 @@ export default function CartWidget() {
     </div>
     )
 }
+
+export default CartWidget;

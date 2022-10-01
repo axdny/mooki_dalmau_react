@@ -1,7 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <div className="navbar sticky-top navbar-expand-md navbar-dark principal-color">
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="menu">
@@ -24,3 +24,5 @@ export default function NavBar() {
     </div>
   );
 }
+
+export default NavBar;

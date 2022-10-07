@@ -1,48 +1,78 @@
-const cakes = [
+const products = [
   {
     id: '1',
-    cake: 'Retro',
+    name: 'Torta Retro',
+    category: 'cakes',
     price: 6500,
+    stock: 10,
     img: '/Assets/torta01_retro.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
   },
   {
     id: '2',
-    cake: 'Happee Birthdae',
+    name: 'Torta Birthdae',
+    category: 'cakes',
     price: 6400,
+    stock: 8,
     img: '/Assets/torta02_harry.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
+
   },
   {
     id: '3',
-    cake: 'Perli',
+    name: 'Torta Perli',
+    category: 'cakes',
     price: 5700,
+    stock: 4,
     img: '/Assets/torta03_perli.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
+
   },
   {
     id: '4',
-    cake: 'Florinda',
-    price: 7300,
-    img: '/Assets/torta04_floreal.png',
+    name: 'Donuts de choco',
+    category: 'donuts',
+    price: 3300,
+    stock: 3,
+    img: '/Assets/donuts.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
+
   },
   {
     id: '5',
-    cake: 'Chocolatoza',
-    price: 6900,
-    img: '/Assets/torta05_chocolate.png',
+    name: 'Galletitas de limón',
+    category: 'cookies',
+    price: 2500,
+    stock: 30,
+    img: '/Assets/galletitas.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
+
   },
   {
     id: '6',
-    cake: 'Torta Oreo',
-    price: 7600,
-    img: '/Assets/torta06_oreo.png',
+    name: 'Macarrones',
+    category: 'macarons',
+    price: 3000,
+    stock: 22,
+    img: '/Assets/macarons.png',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quibusdam quae, a assumenda ratione ducimus doloremque soluta ut sit in reiciendis consequuntur suscipit corrupti perspiciatis dignissimos dolorum? Quos, dolores.'
   },
 ];
 
-const getCakes = () => {
+export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(cakes);
+      resolve(products);
     }, 2000);
   });
 };
 
-export default getCakes;
+export const getProductById = (id) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(products.find(product => {
+        return product.id === id;
+      }));
+    }, 2000);
+  });
+};

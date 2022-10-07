@@ -7,18 +7,16 @@ body {
   scroll-behavior: smooth;
 }
 
-.btn,
-.btn-contact-form {
+.btn {
   background-color: #e3b8bf;
   border-color: #e3b8bf;
 }
 
-.btn:hover,
 .btn:active,
-.btn:focus{
+.btn:focus,
+.btn:hover {
   box-shadow: rgba(227, 184, 191, 0.8);
-  background-color: #e3b8bf;
+  background-color: #e3b8bf !important;
   color: #00000080;
   border-color: #e3b8bf;
-  outline: none !important;
 }

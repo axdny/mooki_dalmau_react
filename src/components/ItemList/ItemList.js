@@ -1,10 +1,10 @@
 import Item from "../Item/Item";
 import './ItemList.css';
 
-const ItemList = ({ cakes }) => {
+const ItemList = ({ products }) => {
   return (
     <div className="container justify-content-center">
-      {cakes.map(cake => <Item key={cake.id} cake={cake.cake} price={cake.price} img={cake.img} />)}
+      {products.map(product => <Item key={product.id} name={product.name} price={product.price} img={product.img} />)}
     </div>
   );
 };

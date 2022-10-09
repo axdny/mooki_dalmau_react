@@ -1,6 +1,9 @@
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ id, name, category, price, stock, img, description }) => {
+  const handleOnAdd = (count) => {
+    const productToAdd = { id, name, price, count };
+  }
 
   return (
     <article>
@@ -24,7 +27,7 @@ const ItemDetail = ({ id, name, category, price, stock, img, description }) => {
         </p>
       </section>
       <footer>
-        <ItemCount/>
+        <ItemCount onAdd={handleOnAdd} stock={stock} />
       </footer>
     </article>
   );

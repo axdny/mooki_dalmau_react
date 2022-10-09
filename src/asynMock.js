@@ -31,7 +31,7 @@ const products = [
   {
     id: '4',
     name: 'Donuts de choco',
-    category: 'donuts',
+    category: 'others',
     price: 3300,
     stock: 3,
     img: '/Assets/donuts.png',
@@ -41,7 +41,7 @@ const products = [
   {
     id: '5',
     name: 'Galletitas de limón',
-    category: 'cookies',
+    category: 'others',
     price: 2500,
     stock: 30,
     img: '/Assets/galletitas.png',
@@ -51,7 +51,7 @@ const products = [
   {
     id: '6',
     name: 'Macarrones',
-    category: 'macarons',
+    category: 'others',
     price: 3000,
     stock: 22,
     img: '/Assets/macarons.png',
@@ -63,16 +63,24 @@ export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
-    }, 2000);
+    }, 1000);
   });
 };
 
 export const getProductById = (id) => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(products.find(product => {
-        return product.id === id;
+      resolve(products.find(prod => {
+        return prod.id === id;
       }));
-    }, 2000);
+    }, 500);
+  });
+};
+
+export const getProductsByCategory = (categoryId) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(products.filter(prod => prod.category === categoryId));
+    }, 500);
   });
 };

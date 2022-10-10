@@ -15,22 +15,3 @@ hr {
   width: 80%;
   margin: auto;
 }
-
-@media all and (max-width: 767px) {
-  .about {
-    flex-direction: column-reverse;
-  }
-
-  .about span {
-    display: block;
-  }
-}
-
-@media all and (min-width: 767px) {
-  .about {
-    max-width: 80%;
-    align-items: center;
-    margin: auto;
-    padding-top: 2rem;
-  }
-}

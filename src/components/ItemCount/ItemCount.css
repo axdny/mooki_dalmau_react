@@ -1,0 +1,14 @@
+.btn-count {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  font-size: 20px;
+  font-weight: 900;
+  margin: .3rem;
+}
+
+.count {
+  font-size: 30px;
+  display: flex;
+}

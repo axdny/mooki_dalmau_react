@@ -2,7 +2,7 @@ const products = [
   {
     id: '1',
     name: 'Torta Retro',
-    category: 'cakes',
+    category: 'tortas',
     price: 6500,
     stock: 10,
     img: '/Assets/torta01_retro.png',
@@ -11,7 +11,7 @@ const products = [
   {
     id: '2',
     name: 'Torta Birthdae',
-    category: 'cakes',
+    category: 'tortas',
     price: 6400,
     stock: 8,
     img: '/Assets/torta02_harry.png',
@@ -21,7 +21,7 @@ const products = [
   {
     id: '3',
     name: 'Torta Perli',
-    category: 'cakes',
+    category: 'tortas',
     price: 5700,
     stock: 4,
     img: '/Assets/torta03_perli.png',
@@ -31,7 +31,7 @@ const products = [
   {
     id: '4',
     name: 'Donuts de choco',
-    category: 'others',
+    category: 'otras',
     price: 3300,
     stock: 3,
     img: '/Assets/donuts.png',
@@ -41,7 +41,7 @@ const products = [
   {
     id: '5',
     name: 'Galletitas de limón',
-    category: 'others',
+    category: 'otras',
     price: 2500,
     stock: 30,
     img: '/Assets/galletitas.png',
@@ -51,7 +51,7 @@ const products = [
   {
     id: '6',
     name: 'Macarrones',
-    category: 'others',
+    category: 'otras',
     price: 3000,
     stock: 22,
     img: '/Assets/macarons.png',
@@ -73,7 +73,7 @@ export const getProductById = (id) => {
       resolve(products.find(prod => {
         return prod.id === id;
       }));
-    }, 500);
+    },);
   });
 };
 
@@ -81,6 +81,6 @@ export const getProductsByCategory = (categoryId) => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(products.filter(prod => prod.category === categoryId));
-    }, 500);
+    }, 400);
   });
 };

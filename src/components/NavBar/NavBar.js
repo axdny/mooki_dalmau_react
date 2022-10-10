@@ -14,10 +14,10 @@ const NavBar = () => {
       <div className="collapse navbar-collapse" id="menu">
         <ul className="navbar-nav d-flex">
           <li className="nav-item m-1">
-            <NavLink to={'/category/cakes'} className="nav-link fw-bold text-white fs-5">Tortas</NavLink>
+            <NavLink to={'/category/tortas'} className="nav-link fw-bold text-white fs-5">Tortas</NavLink>
           </li>
           <li className="nav-item m-1">
-            <NavLink to={'/category/others'} className="nav-link fw-bold text-white fs-5">Otras Delicias</NavLink>
+            <NavLink to={'/category/otras'} className="nav-link fw-bold text-white fs-5">Otras Delicias</NavLink>
           </li>
         </ul>
       </div>

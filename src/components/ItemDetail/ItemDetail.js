@@ -1,8 +1,14 @@
 import ItemCount from '../ItemCount/ItemCount';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ id, name, category, price, stock, img, description }) => {
-  const handleOnAdd = (count) => {
-    const productToAdd = { id, name, price, count };
+
+  const { addItem } = useContext(CartContext);
+
+  const handleOnAdd = (quantity) => {
+    const productToAdd = { id, name, price, quantity };
+    addItem(productToAdd);
   };
 
   return (
@@ -21,7 +27,7 @@ const ItemDetail = ({ id, name, category, price, stock, img, description }) => {
             </p>
           </picture>
           <section className="d-flex about justify-content-evenly align-content-center pt-5">
-            <div class="container-fluid p-3 about-text text-wrap lh-base">
+            <div className="container-fluid p-3 about-text text-wrap lh-base">
               <p className="text-white fw-bold fs-4">
                 Descripción: {description}
               </p>

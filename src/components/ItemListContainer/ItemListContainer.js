@@ -12,20 +12,6 @@ const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
 
-  /*   useEffect(() => {
-      setLoading(true);
-      const asyncFunction = categoryId ? getProductsByCategory : getProducts;
-  
-      asyncFunction(categoryId).then(response => {
-        setProducts(response);
-      }).catch(error => {
-        console.log(error);
-      }).finally(() => {
-        setLoading(false);
-      });
-    }, [categoryId]);
-   */
-
   useEffect(() => {
     setLoading(true);
     const collectionReference = categoryId

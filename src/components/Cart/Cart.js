@@ -1,5 +1,6 @@
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeItem, total, clearCart } = useContext(CartContext);
@@ -17,7 +18,7 @@ const Cart = () => {
                 <div className="d-flex justify-content-evenly pt-5 text-white fw-bold fs-3">
                   {prod.name} x {prod.quantity} unidades / Precio unitario: $ {prod.price}.-
                   <div className="btn btn-group d-flex">
-                    <button onClick={() => removeItem(prod.id)}>eliminar</button>
+                    <button onClick={() => removeItem(prod.id)}>x</button>
                   </div>
                 </div>
               ))
@@ -25,9 +26,10 @@ const Cart = () => {
           <hr className="w-100 border border-3 rounded"></hr>
           <div className="d-flex justify-content-evenly mt-5 text-white fw-bold fs-1">
             Precio total: $ {total}.-
-            <button className="btn fw-bolder">Realizar compra</button>
           </div>
-          <button className="btn mt-5 fw-bold" onClick={() => clearCart()}>Limpiar carrito</button>
+            <div>
+              <Link to="/checkout" className="btn fw-bolder mt-5">Realizar compra</Link>
+            </div>
         </div>
       </div>
     </main>

@@ -48,7 +48,7 @@ const Checkout = () => {
       if (noStock.length === 0) {
         await batch.commit();
         const orderRef = collection(db, 'orders');
-        const orderAdded = addDoc(orderRef, order);
+        const orderAdded = await addDoc(orderRef, order);
 
         clearCart();
         

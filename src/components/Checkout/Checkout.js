@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore';
 import { db } from '../../services/firebase/index';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
@@ -15,9 +17,9 @@ const Checkout = () => {
     try {
       const order = {
         buyer: {
-          name: name,
-          phone: phone,
-          mail: mail
+          name,
+          phone,
+          mail
         },
         items: cart,
         total: total
@@ -49,9 +51,24 @@ const Checkout = () => {
         const orderAdded = addDoc(orderRef, order);
 
         clearCart();
-        alert(`El id de su orden es: ${orderAdded.id}`);
+        
+        const confirmAlert = withReactContent(Swal);
+        confirmAlert.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: `Su numero de orden es: ${orderAdded.id}. ¡Gracias por la compra!`,
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
-        alert('Hay prodcutos fuera de stock');
+        const errorAlert = withReactContent(Swal);
+        errorAlert.fire({
+          position: 'top-end',
+          icon: 'Error',
+          title: 'No hay stock disponible. Por favor comunicarse via mail.',
+          showConfirmButton: false,
+          timer: 1500
+        });
       }
     } catch (error) {
       console.log(error);

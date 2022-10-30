@@ -51,23 +51,18 @@ const Checkout = () => {
         const orderAdded = await addDoc(orderRef, order);
 
         clearCart();
-        
         const confirmAlert = withReactContent(Swal);
         confirmAlert.fire({
-          position: 'top-end',
           icon: 'success',
           title: `Su numero de orden es: ${orderAdded.id}. ¡Gracias por la compra!`,
-          showConfirmButton: false,
-          timer: 1500
+          showConfirmButton: true,
         });
       } else {
         const errorAlert = withReactContent(Swal);
         errorAlert.fire({
-          position: 'top-end',
           icon: 'Error',
           title: 'No hay stock disponible. Por favor comunicarse via mail.',
-          showConfirmButton: false,
-          timer: 1500
+          showConfirmButton: true,
         });
       }
     } catch (error) {
@@ -77,7 +72,17 @@ const Checkout = () => {
     }
   };
   if (loading) {
-    return <h1>Se esta generando su orden...</h1>;
+    return (
+      <main className="hero-image principal-color">
+        <div className="hero-image--opacity d-flex justify-content-center align-items-center text-center w-100">
+          <div className="hero-image--content">
+            <h1 className="hero-image--title text-white fw-bold pb-1">
+              Procesando su compra...
+            </h1>
+          </div>
+        </div>
+      </main>
+    );
   }
   return (
     <main className="hero-image principal-color">
@@ -86,16 +91,13 @@ const Checkout = () => {
           <h1 className="hero-image--title text-white fw-bold pb-1">
             Finalizar Compra
           </h1>
-          <form>
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
-            <label for="phone">Telefono:</label>
-            <input type="number" name="phone" value={phone} onChange={e => setPhone(e.target.value)} />
-            <label for="mail">Mail:</label>
-            <input type="text" name="mail" value={mail} onChange={e => setMail(e.target.value)} />
+          <form className="contact-form p-2">
+            <input className="border-0" type="text" name="name" placeholder="apellido y nombre" value={name} onChange={e => setName(e.target.value)} />
+            <input className="border-0" type="tel" name="phone" placeholder="telefono de contacto" value={phone} onChange={e => setPhone(e.target.value)} />
+            <input className="border-0" type="mail" name="mail" placeholder="e-mail" value={mail} onChange={e => setMail(e.target.value)} />
           </form>
           <div className="d-flex justify-content-evenly mt-5 text-white fw-bold fs-1">
-            <button className="btn" onClick={createOrder}>generar orden</button>
+            <button className="btn p-4 fs-5 fw-bolder" onClick={createOrder}>Generar orden</button>
           </div>
         </div>
       </div>

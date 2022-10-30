@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, removeItem, total, clearCart } = useContext(CartContext);
+  const { cart, removeItem, total } = useContext(CartContext);
   return (
     <main className="hero-image principal-color">
       <div className="hero-image--opacity d-flex justify-content-center align-items-center text-center w-100">
@@ -27,9 +27,9 @@ const Cart = () => {
           <div className="d-flex justify-content-evenly mt-5 text-white fw-bold fs-1">
             Precio total: $ {total}.-
           </div>
-            <div>
-              <Link to="/checkout" className="btn fw-bolder mt-5">Realizar compra</Link>
-            </div>
+          <div>
+            <Link to="/checkout" className="btn p-4 fs-5 fw-bolder m-4">Realizar compra</Link>
+          </div>
         </div>
       </div>
     </main>

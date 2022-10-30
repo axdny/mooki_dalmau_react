@@ -15,3 +15,44 @@ hr {
   width: 80%;
   margin: auto;
 }
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(150px, 1fr));
+  margin: 2rem auto;
+}
+
+@media all and (min-width: 992px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    max-width: 800px;
+  }
+}
+
+.contact-form input {
+  font-size: 0.85rem;
+  resize: none;
+}
+
+@media all and (min-width: 992px) {
+  .contact-form input {
+    font-size: 1rem;
+  }
+}
+
+.contact-form>* {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form>*:focus {
+  outline: none;
+}
+
+.contact-form *::placeholder {
+  color: grey;
+}

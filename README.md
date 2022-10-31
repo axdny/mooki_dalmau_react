@@ -1,4 +1,4 @@
-#**MOOKI VEGAN 1.0**
+# **MOOKI VEGAN 1.0**
 
 ***
 
@@ -10,7 +10,7 @@ Deploy en Vercel: <https://mooki.vercel.app>
 
 ***
 
-##**DESCARGAR REPOSITORIO**
+## **DESCARGAR REPOSITORIO**
 
   1. git clone <https://github.com/axdny/mooki_dalmau_react.git>
   2. cd mooki_dalmau_react
@@ -19,7 +19,7 @@ Deploy en Vercel: <https://mooki.vercel.app>
 
 ***
 
-##**APLICACION CREADA CON LAS SIGUIENTES TECNOLOGIAS**
+## **APLICACION CREADA CON LAS SIGUIENTES TECNOLOGIAS**
 
 * React
 * Vercel

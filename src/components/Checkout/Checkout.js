@@ -92,9 +92,9 @@ const Checkout = () => {
             Finalizar Compra
           </h1>
           <form className="contact-form p-2">
-            <input className="border-0" type="text" name="name" placeholder="apellido y nombre" value={name} onChange={e => setName(e.target.value)} />
-            <input className="border-0" type="tel" name="phone" placeholder="telefono de contacto" value={phone} onChange={e => setPhone(e.target.value)} />
-            <input className="border-0" type="mail" name="mail" placeholder="e-mail" value={mail} onChange={e => setMail(e.target.value)} />
+            <input className="border-0" type="text" name="name" placeholder="apellido y nombre" required value={name} onChange={e => setName(e.target.value)} />
+            <input className="border-0" type="tel" name="phone" placeholder="telefono de contacto" required value={phone} onChange={e => setPhone(e.target.value)} />
+            <input className="border-0" type="mail" name="mail" placeholder="e-mail" required value={mail} onChange={e => setMail(e.target.value)} />
           </form>
           <div className="d-flex justify-content-evenly mt-5 text-white fw-bold fs-1">
             <button className="btn p-4 fs-5 fw-bolder" onClick={createOrder}>Generar orden</button>
